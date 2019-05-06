@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 #include <iostream>
-#include <SortTestHelper.h>
+#include "SortTestHelper.h"
 
 using namespace std;
 
@@ -20,15 +20,23 @@ void selectionSort(T arr[], int n)
 	}
 }
 
+template<typename T>
+void printArray(T arr[], int n)
+{
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
+	cout << endl;
+	return;
+}
+
 int main()
 {
 	int n = 10;
 	int* arr = SortTestHelper::generateRandomArray(n, 2, n);
 	selectionSort(arr, n);
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
 
+	// 打印
+	printArray(arr, n);
 	// 在helper中new过一个内存，需要将他释放掉
 	delete[] arr;
 
