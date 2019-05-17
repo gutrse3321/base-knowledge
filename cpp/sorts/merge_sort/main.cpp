@@ -102,7 +102,7 @@ int main()
   int n = 10000;
 	int* arr = generateRandomArray(n, 2, n);
   // 0.001934s
-  test("归并排序", MergeSort, arr, n);
+  test("cpp 归并排序", MergeSort, arr, n);
 
   delete[] arr;
 

@@ -33,5 +33,5 @@ func Test(arr []int, n int, sort sorts, str string) {
   start := time.Now()
   sort(arr, n)
   end := time.Now()
-  fmt.Printf("golang %s排序: %v\n", str, end.Sub(start))
+  fmt.Println("golang ", str, "排序: ", end.Sub(start))
 }
