@@ -18,7 +18,9 @@ func mergeItem(arr []int, l int, r int)  {
   // fmt.Println(arr)
   mergeItem(arr, mid + 1, r)
   // fmt.Println(arr)
-  merge(arr, l, mid, r)
+  if arr[mid] > arr[mid + 1] {
+    merge(arr, l, mid, r)
+  }
 }
 
 func merge(arr []int, l int, mid int, r int) {

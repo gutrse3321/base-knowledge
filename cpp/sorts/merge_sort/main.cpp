@@ -88,7 +88,8 @@ void mergeItem(T arr[], int l, int r)
   int mid = (l + r) / 2;
   mergeItem(arr, l, mid);
   mergeItem(arr, mid + 1, r);
-  merge(arr, l, mid, r);
+  if (arr[mid] > arr[mid + 1])
+    merge(arr, l, mid, r);
 }
 
 template<typename T>
