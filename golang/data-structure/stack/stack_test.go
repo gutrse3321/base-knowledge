@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func TestStack(test *testing.T) {
 	fmt.Println("isValid:", isValid("([])"))
 
 	stack := NewArrayStack()

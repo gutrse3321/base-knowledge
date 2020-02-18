@@ -1,22 +1,23 @@
 package main
 
 import (
+	array2 "all/array/array"
 	"bytes"
 	"fmt"
 )
 
 func NewArrayStack() *ArrayStack {
-	object := NewArray()
+	object := array2.NewArray()
 	return &ArrayStack{array: *object}
 }
 
 func NewArrayStackWithCap(cap int) *ArrayStack {
-	object := NewArrayWithCap(cap)
+	object := array2.NewArrayWithCap(cap)
 	return &ArrayStack{array: *object}
 }
 
 type ArrayStack struct {
-	array Array
+	array array2.Array
 }
 
 func (a *ArrayStack) GetCap() int {

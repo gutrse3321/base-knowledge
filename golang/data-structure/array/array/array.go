@@ -45,6 +45,14 @@ func (a *Array) Get(index int) (ele interface{}, err error) {
 	return
 }
 
+func (a *Array) GetFirst() (interface{}, error) {
+	return a.Get(0)
+}
+
+func (a *Array) GetLast() (interface{}, error) {
+	return a.Get(a.size - 1)
+}
+
 func (a *Array) Set(index int, val interface{}) (err error) {
 	err = a.requireIndexFailed(index)
 	if err == nil {

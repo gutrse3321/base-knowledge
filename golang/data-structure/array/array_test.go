@@ -1,8 +1,9 @@
 package main
 
 import (
-	"array/array"
+	"all/array/array"
 	"fmt"
+	"testing"
 )
 
 /**
@@ -13,7 +14,7 @@ import (
  * @Desc:
  */
 
-func main() {
+func TestArray(t *testing.T) {
 	arr := array.NewArray()
 
 	for i := 0; i < 10; i++ {
