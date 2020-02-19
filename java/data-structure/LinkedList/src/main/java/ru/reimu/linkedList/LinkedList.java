@@ -41,8 +41,8 @@ public class LinkedList<T> {
             prev = prev.next;
         }
 
-        //找到index - 1的节点元素，构造一个新的节点，并将index - 1之前的
-        //下一个节点赋给新的节点的next，最后将新的节点赋值index - 1的next
+        //找到index - 1的节点元素，构造一个新的节点，并将index之前的
+        //下一个节点赋给新的节点的next，最后将新的节点赋值index的next
         prev.next = new Node(t, prev.next);
         size++;
     }
@@ -57,6 +57,66 @@ public class LinkedList<T> {
 
     public void addLast(T t) {
         add(size, t);
+    }
+
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Get failed. Illegal index");
+        }
+
+        //当前节点，虚拟头部的下一个
+        Node current = dummyHead.next;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.t;
+    }
+
+    public T getFirst() {
+        return get(0);
+    }
+
+    public T getLast() {
+        return get(size - 1);
+    }
+
+    public void set(int index, T t) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Set failed. Illegal index");
+        }
+
+        //当前节点，虚拟头部的下一个
+        Node current = dummyHead.next;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        current.t = t;
+    }
+
+    public boolean contains(T t) {
+        Node current = dummyHead.next;
+
+        while (current != null) {
+            if (current.t.equals(t)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node current = dummyHead.next;
+
+        while (current != null) {
+            sb.append(current + " -> ");
+            current = current.next;
+        }
+        sb.append("null");
+
+        return sb.toString();
     }
 
     private class Node {
