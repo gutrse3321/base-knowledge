@@ -105,6 +105,38 @@ public class LinkedList<T> {
         return false;
     }
 
+    /**
+     * TODO 根据索引位置添加节点(不常用)
+     * @param index
+     * @return
+     */
+    public T remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Remove failed, Index is Illegal");
+        }
+
+
+        Node prev = dummyHead;
+        for (int i = 0; i < index; i++) {
+            prev = prev.next;
+        }
+
+        Node removeNode = prev.next;
+        prev.next = removeNode.next;
+        removeNode.next = null;
+        size--;
+
+        return removeNode.t;
+    }
+
+    public T removeFirst() {
+        return remove(0);
+    }
+
+    public T removeLast() {
+        return remove(size - 1);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

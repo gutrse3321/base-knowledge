@@ -26,5 +26,11 @@ public class Main {
         System.out.println(linkedList.contains(1));
 
         System.out.println(linkedList.get(5));
+
+        linkedList.remove(5);
+        System.out.println(linkedList);
+
+        linkedList.removeLast();
+        System.out.println(linkedList);
     }
 }
