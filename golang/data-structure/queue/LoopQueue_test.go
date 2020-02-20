@@ -43,13 +43,18 @@ func TestLoopQueue_Dequeue(t *testing.T) {
 func TestTime(t *testing.T) {
 	fmt.Println(math.MaxInt32)
 
-	count := 100000
+	count := 10000000
 
-	arrayQueue := NewArrayQueue()
-	fmt.Println(timeFun(arrayQueue, count).Seconds())
+	//arrayQueue := NewArrayQueue()
+	//fmt.Println(timeFun(arrayQueue, count).Seconds())
 
+	//2.1976431
 	loopQueue := NewLoopQueue()
 	fmt.Println(timeFun(loopQueue, count).Seconds())
+
+	//3.2090199
+	linkedListQueue := NewLinkedListQueue()
+	fmt.Println(timeFun(linkedListQueue, count).Seconds())
 }
 
 func timeFun(queue IQueue, count int) time.Duration {

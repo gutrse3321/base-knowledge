@@ -14,13 +14,19 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(Integer.MAX_VALUE);
 
-        int count = 100000;
+        int count = 10000000;
 
+        //time-out O(n)
         ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
         System.out.println(testQueue(arrayQueue, count) + "s");
 
+        //1.1471862s O(1)
         LoopQueue<Integer> loopQueue = new LoopQueue<>();
         System.out.println(testQueue(loopQueue, count) + "s");
+
+        //19.7045847s O(1)
+        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
+        System.out.println(testQueue(linkedListQueue, count) + "s");
     }
 
     private static double testQueue(IQueue<Integer> queue, int opCount) {
