@@ -1,6 +1,6 @@
-package main
+package stack
 
-type Stack interface {
+type IStack interface {
 	GetSize() int
 	IsEmpty() bool
 	Push(t interface{}) error

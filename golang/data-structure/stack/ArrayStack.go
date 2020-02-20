@@ -1,4 +1,4 @@
-package main
+package stack
 
 import (
 	array2 "all/array/array"
@@ -8,16 +8,16 @@ import (
 
 func NewArrayStack() *ArrayStack {
 	object := array2.NewArray()
-	return &ArrayStack{array: *object}
+	return &ArrayStack{array: object}
 }
 
 func NewArrayStackWithCap(cap int) *ArrayStack {
 	object := array2.NewArrayWithCap(cap)
-	return &ArrayStack{array: *object}
+	return &ArrayStack{array: object}
 }
 
 type ArrayStack struct {
-	array array2.Array
+	array *array2.Array
 }
 
 func (a *ArrayStack) GetCap() int {

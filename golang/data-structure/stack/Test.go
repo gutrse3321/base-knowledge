@@ -1,4 +1,4 @@
-package main
+package stack
 
 /**
  * @Author: Tomonori
@@ -53,8 +53,7 @@ func (s *SSStack) Push(t byte) {
 }
 
 func (s *SSStack) Pop() byte {
-	e := s.array[len(s.array) - 1]
-	s.array = s.array[:len(s.array) - 1]
+	e := s.array[len(s.array)-1]
+	s.array = s.array[:len(s.array)-1]
 	return e
 }
-
