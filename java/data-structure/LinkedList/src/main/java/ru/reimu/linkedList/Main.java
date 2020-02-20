@@ -1,5 +1,7 @@
 package ru.reimu.linkedList;
 
+import java.util.Random;
+
 /**
  * @Author: Tomonori
  * @Date: 2020/2/19 15:27
