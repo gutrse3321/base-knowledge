@@ -113,6 +113,33 @@ func (l *LinkedList) Contains(t interface{}) bool {
 	return false
 }
 
+//移除索引的节点
+func (l *LinkedList) Remove(index int) (t interface{}, err error) {
+	if index < 0 || index >= l.size {
+		err = errors.New("Remove failed, Index is Illegal")
+	}
+
+	prev := l.dummyHead
+	for i := 0; i < index; i++ {
+		prev = prev.next
+	}
+
+	removeNode := prev.next
+	prev.next = removeNode.next
+	removeNode.next = nil
+	l.size--
+
+	return removeNode.val, err
+}
+
+func (l *LinkedList) RemoveFirst() (interface{}, error) {
+	return l.Remove(0)
+}
+
+func (l *LinkedList) RemoveLast() (interface{}, error) {
+	return l.Remove(l.size - 1)
+}
+
 func (l *LinkedList) String() string {
 	buffer := bytes.Buffer{}
 

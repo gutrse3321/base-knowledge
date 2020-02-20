@@ -30,4 +30,10 @@ func TestSimple(t *testing.T) {
 	fmt.Println(linkedList.Contains(1))
 
 	fmt.Println(linkedList.Get(5))
+
+	linkedList.Remove(5)
+	fmt.Println(linkedList)
+
+	linkedList.RemoveLast()
+	fmt.Println(linkedList)
 }
